@@ -1,4 +1,4 @@
-import { Children } from "../../interfaces/children.interface";
+import { Children } from "../../models/children.interface";
 
 interface Props extends Children {
   isOpen: boolean;

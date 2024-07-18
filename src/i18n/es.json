@@ -1,12 +1,15 @@
 {
   "index.title": "Mezclador de playlist de Spotify",
   "index.subtitle": "Combina tus listas de reproducción favoritas de Spotify en una mezcla perfecta.",
-  "index.enter": "Ingresa tu usuario de Spotify",
+  "index.enter": "Ingresa el ID de tu usuario de Spotify",
   "index.button": "Comenzar",
   "index.input.htmlFor": "usuario",
-  "index.input.placeholder": "Ingresa tu usuario",
-  "index.input.label": "Usuario de spotify",
-  "index.input.error": "Por favor, ingresa un usuario de Spotify válido",
-  "index.modal.title": "Selecciona tu usuario",
-  "index.modal.button": "Cancelar"
+  "index.input.placeholder": "Ingresa tu ID",
+  "index.input.label": "ID de spotify",
+  "index.input.error": "Por favor, ingresa un ID de Spotify válido",
+  "index.modal.title": "Este es tu usuario?",
+  "index.modal.button.cancel": "Cerrar",
+  "index.modal.button.confirm": "Confirmar",
+  "index.userID.info": "Cual es mi ID de spotify?",
+  "index.userID.content": "Abre la app de spotify, selecciona tu foto de perfil, luego CONFIGURACION Y PRIVACIDAD y luego en CUENTA ahi encontraras tu ID en donde dice NOMBRE DE USUARIO"
 }

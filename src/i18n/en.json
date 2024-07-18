@@ -1,12 +1,15 @@
 {
   "index.title": "Spotify Playlist Mixer",
   "index.subtitle": "Combine your favorite Spotify playlists into one seamless mix.",
-  "index.enter": "Enter your Spotify username",
+  "index.enter": "Enter your Spotify userID",
   "index.button": "Get Started",
-  "index.input.htmlFor": "username",
-  "index.input.placeholder": "Username",
-  "index.input.label": "Spotify username",
-  "index.input.error": "Invalid username",
-  "index.modal.title": "Select your user",
-  "index.modal.button": "Cancel"
+  "index.input.htmlFor": "userID",
+  "index.input.placeholder": "userID",
+  "index.input.label": "Spotify userID",
+  "index.input.error": "Invalid userID",
+  "index.modal.title": "this is your user?",
+  "index.modal.button": "Close",
+  "index.modal.button.confirm": "Confirm",
+  "index.userID.info": "What is my spotify ID?",
+  "index.userID.content": "Open the spotify app, select your profile photo, then SETTINGS AND PRIVACY and then in ACCOUNT there you will find your ID where it says USERNAME"
 }
