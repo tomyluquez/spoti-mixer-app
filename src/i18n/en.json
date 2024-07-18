@@ -1,0 +1,12 @@
+{
+  "index.title": "Spotify Playlist Mixer",
+  "index.subtitle": "Combine your favorite Spotify playlists into one seamless mix.",
+  "index.enter": "Enter your Spotify username",
+  "index.button": "Get Started",
+  "index.input.htmlFor": "username",
+  "index.input.placeholder": "Username",
+  "index.input.label": "Spotify username",
+  "index.input.error": "Invalid username",
+  "index.modal.title": "Select your user",
+  "index.modal.button": "Cancel"
+}

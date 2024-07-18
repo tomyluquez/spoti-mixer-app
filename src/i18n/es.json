@@ -1,0 +1,12 @@
+{
+  "index.title": "Mezclador de playlist de Spotify",
+  "index.subtitle": "Combina tus listas de reproducción favoritas de Spotify en una mezcla perfecta.",
+  "index.enter": "Ingresa tu usuario de Spotify",
+  "index.button": "Comenzar",
+  "index.input.htmlFor": "usuario",
+  "index.input.placeholder": "Ingresa tu usuario",
+  "index.input.label": "Usuario de spotify",
+  "index.input.error": "Por favor, ingresa un usuario de Spotify válido",
+  "index.modal.title": "Selecciona tu usuario",
+  "index.modal.button": "Cancelar"
+}

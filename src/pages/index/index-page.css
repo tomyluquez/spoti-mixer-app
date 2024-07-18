@@ -1,0 +1,3 @@
+.container-index {
+  @apply flex flex-col gap-8 items-center px-8 justify-center h-screen text-center;
+}

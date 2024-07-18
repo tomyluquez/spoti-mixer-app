@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  @apply bg-sgreen-light min-h-screen;
+}
+
+/* Estilos generales de la aplicacion */
+
+/* Containers */
+.container-titles {
+  @apply flex flex-col items-center gap-2;
+}
+
+/* Texts */
+.title {
+  @apply text-swhite font-bold text-center;
+}
+
+.subtitle {
+  @apply text-sgray text-center;
+  line-height: 20px;
+}
+
+/* Inputs */
+.select-custom {
+  @apply rounded-lg border border-sgray bg-sblack p-2 text-sgray;
+}
+
+/* Buttons */
+
+.button-primary {
+  @apply bg-sgreen-light text-center text-swhite font-bold py-4 rounded-lg hover:bg-sgreen-strong duration-300;
+}
+
+.button-disabled {
+  @apply bg-sgray text-center text-swhite font-bold py-4 rounded-lg;
+}
