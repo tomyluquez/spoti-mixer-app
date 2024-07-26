@@ -1,31 +1,30 @@
 import { UserProfile } from "../models/User/Profile/userProfile.model";
 import { UserProfileResponse } from "../models/User/Profile/userProfileResponde.model";
 import { getToken } from "./getToken";
+import notImage from "../assets/noimage.png";
 
-export const GetUserProfile = async (username: string) => {
+export const GetUserProfile = async (userID: string) => {
   const url = import.meta.env.VITE_SPOTIFY_URL_BASE || "";
   const token = await getToken();
-  console.log(username);
 
-  const response = await fetch(`${url}/v1/users/${username}`, {
-    method: "GET",
-    headers: {
-      "Content-Type": "application/json",
-      Authorization: "Bearer " + token,
-    },
-  });
+  try {
+    const response = await fetch(`${url}/v1/users/${userID}`, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: "Bearer " + token,
+      },
+    });
+    const data: UserProfileResponse = await response.json();
 
-  if (!response.ok) {
-    throw new Error("Failed to fetch access token");
+    const profile = new UserProfile();
+    profile.img = data.images[0].url || notImage;
+    profile.userID = data.id;
+    profile.userName = data.display_name;
+    profile.userUri = data.uri;
+    console.log(data);
+    return profile;
+  } catch (error) {
+    console.log(error);
   }
-
-  const data: UserProfileResponse = await response.json();
-
-  const profile = new UserProfile();
-  console.log(data);
-  profile.img = data.images[0].url;
-  profile.userID = data.id;
-  profile.userName = data.display_name;
-  profile.userUri = data.uri;
-  return profile;
 };

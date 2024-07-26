@@ -19,14 +19,16 @@
 }
 
 body {
-  @apply bg-sgreen-light min-h-screen;
+  min-height: 100vh;
+  background: #000000;
+  padding: 30px 0
 }
 
 /* Estilos generales de la aplicacion */
 
 /* Containers */
 .container-titles {
-  @apply flex flex-col items-center gap-2;
+  @apply flex flex-col items-center gap-4;
 }
 
 /* Texts */
@@ -40,7 +42,7 @@ body {
 }
 
 .text-info {
-  @apply text-blue-400 text-sm text-center underline;
+  @apply text-blue-400 text-[10px] text-center underline;
 }
 
 .text-error {
@@ -55,9 +57,13 @@ body {
 /* Buttons */
 
 .button-primary {
-  @apply bg-sgreen-light text-center text-swhite font-bold py-4 rounded-lg hover:bg-sgreen-strong duration-300;
+  @apply min-w-[30px] px-4 py-2 text-sm font-medium tracking-wide text-swhite  duration-300 border border-sgreen-light rounded-md hover:bg-sgreen-strong focus:outline-none focus:ring focus:ring-gray-300 focus:ring-opacity-40;
 }
 
 .button-disabled {
-  @apply bg-sgray text-center text-swhite font-bold py-4 rounded-lg;
+  @apply min-w-[30px] bg-sgray px-4 py-2 text-sm font-medium tracking-wide text-swhite duration-300 border border-sgray rounded-md  focus:outline-none focus:ring focus:ring-gray-300 focus:ring-opacity-40;
+}
+
+.button-close{
+  @apply min-w-[30px] px-4 py-2 text-sm font-medium tracking-wide text-gray-700  duration-300 border border-gray-200 rounded-md dark:text-gray-200 dark:border-gray-700 dark:hover:bg-gray-800 hover:bg-gray-100 focus:outline-none focus:ring focus:ring-gray-300 focus:ring-opacity-40;
 }

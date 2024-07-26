@@ -4,12 +4,12 @@ export default {
   theme: {
     extend: {
       colors: {
-        "sgreen-light": "#1cbc54",
+        "sgreen-light": "#1ED45E",
         "sgreen-strong": "#1FDF64",
-        sblack: "#121212",
+        sblack: "#232323",
         sgray: "#A3A3A3",
         swhite: "#FFFFFF",
-        cards: "rgb(18, 25, 19, 0.7)",
+        cards: "#127234",
       },
     },
   },

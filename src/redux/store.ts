@@ -1,8 +1,12 @@
 import { configureStore } from "@reduxjs/toolkit";
-import languageReducer from "./slices/language.slice";
+import playlistsReducer from "./slices/playlists.slice";
 
-export default configureStore({
+// Configura la tienda
+export const store = configureStore({
   reducer: {
-    language: languageReducer,
+    global: playlistsReducer,
   },
 });
+
+// Exporta el tipo RootState
+export type RootState = ReturnType<typeof store.getState>;

@@ -1,30 +1,45 @@
 import { checkValidateToken } from "../helpers/checkValidateToken";
+import { userAuth } from "./userAuyh";
 
 export const getToken = async () => {
   const isTokenExpired = checkValidateToken();
+
   if (isTokenExpired) {
-    await fetchAccessToken();
+    const code = localStorage.getItem("code");
+    if (!code) {
+      userAuth(); // Redirige para obtener un nuevo código
+      return;
+    }
+    await fetchAccessToken(code);
   }
 
-  const { access_token } = JSON.parse(
-    localStorage.getItem("access_token_data")!
-  );
-  return access_token;
+  const accessTokenData = localStorage.getItem("access_token_data");
+  if (accessTokenData) {
+    const { access_token } = JSON.parse(accessTokenData);
+    return access_token;
+  }
+  return null;
 };
-export const fetchAccessToken = async () => {
+
+export const fetchAccessToken = async (code: string) => {
   const clientId = import.meta.env.VITE_SPOTIFY_CLIENT_ID;
   const clientSecret = import.meta.env.VITE_SPOTIFY_CLIENT_SECRET;
   const url = import.meta.env.VITE_SPOTIFY_URL_TOKEN || "";
+
+  const body = new URLSearchParams({
+    grant_type: "authorization_code",
+    code: code,
+    redirect_uri: import.meta.env.VITE_SPOTIFY_REDIRECT_URI,
+    client_id: clientId,
+    client_secret: clientSecret,
+  });
 
   const response = await fetch(url, {
     method: "POST",
     headers: {
       "Content-Type": "application/x-www-form-urlencoded",
-      Authorization: "Basic " + btoa(clientId + ":" + clientSecret),
     },
-    body: new URLSearchParams({
-      grant_type: "client_credentials",
-    }),
+    body: body.toString(),
   });
 
   if (!response.ok) {

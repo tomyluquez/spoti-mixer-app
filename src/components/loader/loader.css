@@ -1,9 +1,9 @@
 .loader {
-  border: 4px solid #a3a3a3; /* Color de fondo del círculo */
+  border: 0.4em solid #a3a3a3; /* Color de fondo del círculo */
   border-radius: 50%;
-  border-top: 4px solid #1fdf64; /* Color del borde giratorio */
-  width: 50px;
-  height: 50px;
+  border-top: 0.4em solid #1fdf64; /* Color del borde giratorio */
+  width: 1.5em;
+  height: 1.5em;
   animation: spin 1s linear infinite; /* Animación giratoria */
 }
 
