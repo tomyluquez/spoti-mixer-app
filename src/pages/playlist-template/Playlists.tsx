@@ -53,6 +53,10 @@ const Playlists = () => {
   }, [userId, t]);
 
   const continueToTracks = () => {
+    if (!selected || selected.length < 2) {
+      return;
+    }
+
     localStorage.setItem("playlistsIDs", JSON.stringify(selected));
     dispatch(clearState());
     window.location.href = "/tracks";

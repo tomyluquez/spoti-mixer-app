@@ -113,11 +113,11 @@ const TableGeneral = ({ tableData }: TableGeneralProps) => {
               <td className="table-body-td">
                 <div className="flex items-center justify-start gap-2 px-4">
                   <img src={data.image} alt="playlist image" className="w-10" />
-                  <p className="text-[14px]">{data.name}</p>
+                  <div className="flex flex-col items-start justify-center">
+                    <span className="text-[14px] text-left">{data.name}</span>
+                    <span className="owner">{data.owner}</span>
+                  </div>
                 </div>
-              </td>
-              <td className="hidden md:table-cell table-body-td lili">
-                <p className="">{data.owner}</p>
               </td>
               <td className="hidden md:table-cell table-body-td lala">
                 {data.info}

@@ -12,10 +12,6 @@ export const createDataTablePlaylists = (
         responsive: true,
       },
       {
-        value: t("TablePlaylists.owner"),
-        responsive: false,
-      },
-      {
         value: t("TablePlaylists.totalTracks"),
         responsive: false,
       },

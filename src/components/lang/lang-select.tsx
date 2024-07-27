@@ -2,8 +2,6 @@ import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 import esFlag from "../../assets/spain-flag.svg";
 import enFlag from "../../assets/uk-flag.svg";
-import { useDispatch } from "react-redux";
-import { setLanguageSelected } from "../../redux/slices/playlists.slice";
 
 export interface RootState {
   language: string;
@@ -12,20 +10,21 @@ export interface RootState {
 
 const LangSelect: React.FC = () => {
   const { i18n } = useTranslation();
-  const [language, setLanguage] = useState("es");
-  const dispatch = useDispatch();
+  const [language, setLanguage] = useState(
+    localStorage.getItem("language") || "es"
+  );
 
   const onChangeLanguage = (e: React.ChangeEvent<HTMLSelectElement>) => {
     const newLanguage = e.target.value;
     setLanguage(newLanguage);
-    dispatch(setLanguageSelected(newLanguage));
+    localStorage.setItem("language", newLanguage);
     i18n.changeLanguage(newLanguage);
   };
 
   const toggleLanguage = () => {
     const newLanguage = language === "es" ? "en" : "es";
     setLanguage(newLanguage);
-    dispatch(setLanguageSelected(newLanguage));
+    localStorage.setItem("language", newLanguage);
     i18n.changeLanguage(newLanguage);
   };
 

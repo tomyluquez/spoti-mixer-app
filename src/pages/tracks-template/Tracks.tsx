@@ -49,6 +49,9 @@ const Tracks = () => {
   }, []);
 
   const createPlaylist = async () => {
+    if (!playlistName || !selected || selected.length === 0) {
+      return;
+    }
     setCreateLoading(true);
     try {
       const { id, href } = await CreatePlaylist(userID, playlistName);

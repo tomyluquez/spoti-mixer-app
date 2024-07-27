@@ -5,7 +5,7 @@ export default {
     extend: {
       colors: {
         "sgreen-light": "#1ED45E",
-        "sgreen-strong": "#1FDF64",
+        "sgreen-strong": "#18bc51",
         sblack: "#232323",
         sgray: "#A3A3A3",
         swhite: "#FFFFFF",

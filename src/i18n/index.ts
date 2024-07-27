@@ -3,6 +3,8 @@ import { initReactI18next } from "react-i18next";
 import esTranslations from "./es.json";
 import enTranslations from "./en.json";
 
+const defaultLanguage = localStorage.getItem("language") || "es";
+
 const resources = {
   en: {
     translation: enTranslations,
@@ -14,7 +16,7 @@ const resources = {
 
 i18n.use(initReactI18next).init({
   resources,
-  lng: "es", // Idioma por defecto
+  lng: defaultLanguage, // Idioma por defecto
   keySeparator: false,
   interpolation: {
     escapeValue: false,

@@ -11,5 +11,13 @@
 }
 
 .table-body-tr {
-  @apply hover:bg-slate-400 duration-200 cursor-pointer;
+  @apply hover:bg-sgreen-light duration-200 cursor-pointer;
+}
+
+.table-body-tr:hover .owner {
+  @apply text-sblack;
+}
+
+.owner {
+  @apply text-[10px] text-left text-sgray;
 }
