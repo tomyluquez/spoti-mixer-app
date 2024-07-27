@@ -16,17 +16,19 @@ export const createDataTablePlaylists = (
         responsive: false,
       },
     ],
-    dataTable: playlists.items.map((playlist) => {
-      return {
-        isSelected: false,
-        image: playlist.image,
-        name: playlist.name,
-        owner: playlist.owner,
-        info: playlist.totalTracks,
-        itemId: playlist.id,
-        uri: playlist.uri,
-      };
-    }),
+    dataTable: playlists.items
+      .map((playlist) => {
+        return {
+          isSelected: false,
+          image: playlist.image,
+          name: playlist.name,
+          owner: playlist.owner,
+          info: playlist.totalTracks,
+          itemId: playlist.id,
+          uri: playlist.uri,
+        };
+      })
+      .filter((playlist) => playlist.info > 0),
     type: "playlists",
     action: {
       contentButton: "Continuar",

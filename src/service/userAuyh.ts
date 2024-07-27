@@ -4,7 +4,7 @@ export const userAuth = async () => {
     import.meta.env.VITE_SPOTIFY_REDIRECT_URI
   );
   const scopes = encodeURIComponent(
-    "playlist-modify-public playlist-modify-private"
+    "playlist-modify-public playlist-modify-private playlist-read-private playlist-read-collaborative"
   );
 
   if (!clientId || !redirectUri) {
