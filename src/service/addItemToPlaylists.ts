@@ -1,8 +1,8 @@
 import { getToken } from "./getToken";
-const url = import.meta.env.VITE_SPOTIFY_URL_BASE || "";
-const token = await getToken();
 
 export const AddItemToPlaylist = async (playlistID: number, uris: string[]) => {
+  const url = import.meta.env.VITE_SPOTIFY_URL_BASE || "";
+  const token = await getToken();
   const maxNumberOfItems = 100;
   let data;
 
@@ -13,16 +13,21 @@ export const AddItemToPlaylist = async (playlistID: number, uris: string[]) => {
         i * maxNumberOfItems,
         (i + 1) * maxNumberOfItems
       );
-      await fetchData(playlistID, chunk);
+      await fetchData(playlistID, chunk, url, token);
     }
   } else {
-    await fetchData(playlistID, uris);
+    await fetchData(playlistID, uris, url, token);
   }
 
   console.log(data);
 };
 
-const fetchData = async (playlistID: number, uris: string[]) => {
+const fetchData = async (
+  playlistID: number,
+  uris: string[],
+  url: string,
+  token: string
+) => {
   try {
     await fetch(`${url}/v1/playlists/${playlistID}/tracks`, {
       method: "POST",
